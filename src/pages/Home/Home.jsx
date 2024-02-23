@@ -1,29 +1,13 @@
 import video from "../../assets/game.mp4";
+import NavBar from "../../components/NavBar/NavBar";
+
 import styles from "./Home.module.scss";
-import { SiRiotgames } from "react-icons/si";
-import { TbShoppingCartSearch } from "react-icons/tb";
-import { FaGithubAlt } from "react-icons/fa";
+
 const Home = () => {
   return (
     <div className={styles["home-container"]}>
       <header>
-        <nav className={styles.navigation}>
-          <div className={styles.navigation__links}>
-            <SiRiotgames className={styles.navigation__icons} />
-            <h2>
-              <span>R</span>XG
-            </h2>
-          </div>
-          <div className={styles.navigation__links}>
-            <TbShoppingCartSearch className={styles.navigation__icons} />
-            <h5>Explore</h5>
-          </div>
-
-          <div className={styles.navigation__links}>
-            <FaGithubAlt className={styles.navigation__icons} />
-            <h5>AmandeepMewar</h5>
-          </div>
-        </nav>
+        <NavBar />
       </header>
       <video autoPlay loop muted className={styles.video}>
         <source src={video} type="video/mp4" />

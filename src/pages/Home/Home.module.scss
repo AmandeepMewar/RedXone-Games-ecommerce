@@ -30,53 +30,6 @@
   z-index: -1;
 }
 
-.navigation {
-  height: auto;
-  display: flex;
-  padding: 2rem;
-  align-items: center;
-  margin: 2rem;
-
-  &__links {
-    display: flex;
-    align-items: center;
-    padding: 0rem 2rem;
-    gap: 1rem;
-    cursor: pointer;
-    transition: color 0.2s;
-
-    &:first-child {
-      border-right: 2px solid var(--clr-grey-3);
-    }
-
-    h2 {
-      font-size: 3.2rem;
-      font-weight: 800;
-      letter-spacing: 2px;
-      line-height: 1.2;
-
-      span {
-        color: var(--clr-red);
-      }
-    }
-
-    h5 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-    }
-
-    &:hover {
-      color: var(--clr-grey-9);
-    }
-  }
-
-  &__icons {
-    width: 2.5rem;
-    height: 2.5rem;
-  }
-}
-
 .intro {
   max-width: 95%;
   width: 60rem;
