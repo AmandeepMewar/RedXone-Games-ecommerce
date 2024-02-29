@@ -8,22 +8,53 @@ import styles from "./Footer.module.scss";
 export const Socials = [
   {
     id: 1,
-    icon: <RiInstagramFill className={styles.social__icon} />,
+    icon: <RiInstagramFill className={styles["footer__social--icon"]} />,
   },
   {
     id: 2,
-    icon: <FaYoutube className={styles.social__icon} />,
+    icon: <FaYoutube className={styles["footer__social--icon"]} />,
   },
   {
     id: 3,
-    icon: <FaXTwitter className={styles.social__icon} />,
+    icon: <FaXTwitter className={styles["footer__social--icon"]} />,
   },
   {
     id: 4,
-    icon: <FaFacebook className={styles.social__icon} />,
+    icon: <FaFacebook className={styles["footer__social--icon"]} />,
   },
   {
     id: 5,
-    icon: <MdEmail className={styles.social__icon} />,
+    icon: <MdEmail className={styles["footer__social--icon"]} />,
+  },
+];
+
+export const FooterData = [
+  {
+    id: 1,
+    title: "About",
+  },
+  {
+    id: 2,
+    title: "Pricing",
+  },
+  {
+    id: 3,
+    title: "Terms of Use",
+  },
+  {
+    id: 4,
+    title: "Privacy Policy",
+  },
+  {
+    id: 5,
+    title: "Careers",
+  },
+  {
+    id: 6,
+    title: "Blog",
+  },
+  {
+    id: 7,
+    title: "Contact Us",
   },
 ];

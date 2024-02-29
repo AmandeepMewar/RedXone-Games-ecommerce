@@ -1,0 +1,9 @@
+.grid-container {
+  width: 95%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  place-items: center;
+  gap: 2rem;
+  padding: 5rem 0;
+}

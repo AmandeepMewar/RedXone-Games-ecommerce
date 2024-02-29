@@ -1,22 +1,25 @@
 .navigation {
-  height: auto;
+  width: 100%;
   display: flex;
   padding: 2rem;
   align-items: center;
   margin: 1rem;
+  gap: 3rem;
+
+  &__logo {
+    width: 2.6rem;
+    height: 2.6rem;
+    color: var(--clr-red);
+  }
 
   &__links:link,
   :visited {
     display: flex;
     align-items: center;
     padding: 0rem 2rem;
-    gap: 1rem;
+    gap: 1.6rem;
     cursor: pointer;
     transition: color 0.2s;
-
-    &:first-child {
-      border-right: 2px solid var(--clr-grey-3);
-    }
 
     &:nth-last-child(2) {
       margin-left: auto;
@@ -36,7 +39,7 @@
     h5 {
       font-size: 1.8rem;
       font-weight: 700;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
     }
 
     &:hover {
@@ -45,7 +48,7 @@
   }
 
   &__icons {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.4rem;
+    height: 2.4rem;
   }
 }

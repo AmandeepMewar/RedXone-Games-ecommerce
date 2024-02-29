@@ -1,0 +1,23 @@
+.card {
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--clr-grey-1);
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.card-info {
+  padding: 1.5rem;
+}
+
+.card-button {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.card__purchase {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
