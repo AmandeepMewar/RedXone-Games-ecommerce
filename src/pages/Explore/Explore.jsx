@@ -23,7 +23,7 @@ const Explore = () => {
       </header>
 
       <main className={styles["explore-main"]}>
-        <h1>Trending and interesting</h1>
+        <h1>New and trending!</h1>
         <Grid>
           {gameData && gameData.map(game => <Card key={game.id} {...game} />)}
         </Grid>

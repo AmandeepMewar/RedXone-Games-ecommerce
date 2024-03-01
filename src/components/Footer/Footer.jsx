@@ -22,9 +22,7 @@ const Footer = () => {
       </div>
       <div className={styles["footer__copyright"]}>
         <p>
-          © 2024{" "}
-          <Link className={styles["footer__links--item"]}>RedXone Games.</Link>{" "}
-          All rights reserved.
+          © 2024 <span>RedXone Games.</span> All rights reserved.
         </p>
         <p className={styles["footer__copyright--text"]}>
           Our websites may contain resources provided by third parties. These
