@@ -6,11 +6,13 @@ import {
 } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Explore from "./pages/Explore/Explore";
+import GameDetail from "./pages/GameDetail/GameDetail";
 
 const routerDefinitions = createRoutesFromElements(
   <Route>
     <Route path="/" element={<Home />} />
     <Route path="/explore" element={<Explore />} />
+    <Route path="/explore/:id" element={<GameDetail />} />
   </Route>
 );
 

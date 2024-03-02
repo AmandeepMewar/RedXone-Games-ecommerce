@@ -5,11 +5,13 @@ import { api } from "../../api/api";
 import { useEffect, useState } from "react";
 import Card from "../../components/Card/Card";
 import Grid from "../../components/Grid/Grid";
+
 const Explore = () => {
   const [gameData, setGameData] = useState(null);
+  const query = "?dates=2023-01-01,2024-12-31&page_size=40&";
+
   const fetchData = async () => {
-    const responseData = await api();
-    console.log(responseData.results);
+    const responseData = await api(query);
     setGameData(responseData.results);
   };
 
