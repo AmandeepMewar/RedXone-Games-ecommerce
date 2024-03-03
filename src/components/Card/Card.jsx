@@ -6,7 +6,7 @@ const Card = props => {
   return (
     <Link to={`/explore/${props.id}`} className={styles["card"]}>
       <div className={styles["card-image"]}>
-        <img src={props.background_image} alt={props.name} />
+        <img src={props.background_image} alt={props.name} loading="lazy" />
       </div>
       <div className={styles["card-info"]}>
         <div className={styles["card-title"]}>

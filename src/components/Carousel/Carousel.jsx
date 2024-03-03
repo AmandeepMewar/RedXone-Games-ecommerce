@@ -9,7 +9,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
 // import required modules
 import { Keyboard, Pagination, Navigation, Autoplay } from "swiper/modules";
 
@@ -30,30 +29,34 @@ const Carousel = props => {
   return (
     <>
       <Swiper
+        grabCursor={true}
         style={{
-          "--swiper-navigation-color": "#fff",
-          "--swiper-pagination-color": "#fff",
+          "--swiper-navigation-color": "#808080",
+          "--swiper-pagination-color": "#808080",
         }}
         slidesPerView={1}
         centeredSlides={true}
         autoplay={{
-          delay: 2500,
+          delay: 5000,
           disableOnInteraction: false,
         }}
         navigation={true}
-        pagination={true}
+        pagination={{ clickable: true }}
         keyboard={{
           enabled: true,
         }}
-        lazy={true}
-        loop={true}
+        lazy="true"
         modules={[Pagination, Navigation, Keyboard, Autoplay]}
         className={styles["swiper"]}
       >
         {imageData &&
           imageData.map(image => (
             <SwiperSlide key={image.id}>
-              <img src={image.image} loading="lazy" />
+              <img
+                src={image.image}
+                loading="lazy"
+                className={styles["swiper__img"]}
+              />
               <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
             </SwiperSlide>
           ))}
