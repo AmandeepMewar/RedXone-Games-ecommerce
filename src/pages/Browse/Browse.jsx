@@ -1,12 +1,11 @@
 import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBar";
-import styles from "./Explore.module.scss";
+import styles from "./Browse.module.scss";
 import { api } from "../../api/api";
 import { useEffect, useState } from "react";
 import Card from "../../components/Card/Card";
 import Grid from "../../components/Grid/Grid";
-
-import { LuLoader2 } from "react-icons/lu";
+import Loader from "../../ui/Loader/Loader";
 
 const Explore = () => {
   const [loading, setLoading] = useState(true);
@@ -31,10 +30,7 @@ const Explore = () => {
 
       <main className={styles["explore-main"]}>
         {loading ? (
-          <div className={styles["game-loading"]}>
-            <LuLoader2 className={styles["game-loading__icon"]} />
-            Please wait...
-          </div>
+          <Loader />
         ) : (
           <div className={styles["game-list"]}>
             <h1>Trending and interesting</h1>

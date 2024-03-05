@@ -5,14 +5,14 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 import Home from "./pages/Home/Home";
-import Explore from "./pages/Explore/Explore";
+import Browse from "./pages/Browse/Browse";
 import GameDetail from "./pages/GameDetail/GameDetail";
 
 const routerDefinitions = createRoutesFromElements(
   <Route>
     <Route path="/" element={<Home />} />
-    <Route path="/explore" element={<Explore />} />
-    <Route path="/explore/:id" element={<GameDetail />} />
+    <Route path="/browse" element={<Browse />} />
+    <Route path="/browse/:id" element={<GameDetail />} />
   </Route>
 );
 

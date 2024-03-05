@@ -18,7 +18,6 @@ const Carousel = props => {
   const query = `/${props.id}/screenshots?`;
   const fetchData = async () => {
     const response = await api(query);
-    console.log(response.results);
     setImageData(response.results);
   };
 

@@ -20,8 +20,9 @@
   width: 100%;
   backdrop-filter: brightness(0.7);
   background-image: linear-gradient(
-    to left top,
-    rgba(0, 0, 0, 0.066),
+    to left,
+    rgba(255, 0, 0, 0) 10%,
+    rgb(78, 1, 1),
     rgb(0, 0, 0)
   );
   position: fixed;

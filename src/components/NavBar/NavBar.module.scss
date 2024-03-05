@@ -7,9 +7,10 @@
   gap: 3rem;
 
   &__logo {
-    width: 2.6rem;
-    height: 2.6rem;
+    width: 3rem;
+    height: 3rem;
     color: var(--clr-red);
+    transition: transform 0.2s;
   }
 
   &__links:link,
@@ -17,7 +18,7 @@
     display: flex;
     align-items: center;
     padding: 0rem 2rem;
-    gap: 1.6rem;
+    gap: 1.2rem;
     cursor: pointer;
     transition: color 0.2s;
 
@@ -26,9 +27,9 @@
     }
 
     h2 {
-      font-size: 3.2rem;
+      font-size: 2.8rem;
       font-weight: 800;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
       line-height: 1.2;
 
       span {
@@ -37,7 +38,7 @@
     }
 
     h5 {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       font-weight: 700;
       letter-spacing: 1px;
     }
@@ -45,10 +46,14 @@
     &:hover {
       color: var(--clr-grey-9);
     }
+
+    // &:hover .navigation__logo {
+    //   transform: scale(1.4);
+    // }
   }
 
   &__icons {
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 2rem;
+    height: 2rem;
   }
 }

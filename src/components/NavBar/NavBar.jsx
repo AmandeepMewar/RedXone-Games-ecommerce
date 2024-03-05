@@ -13,12 +13,12 @@ const NavBar = () => {
         <NavLink to="/" className={styles.navigation__links}>
           <SiRiotgames className={styles.navigation__logo} />
           <h2>
-            <span>R</span>XG
+            <span>Red</span>Xone
           </h2>
         </NavLink>
-        <NavLink to="/explore" className={styles.navigation__links}>
+        <NavLink to="/browse" className={styles.navigation__links}>
           <MdOutlineShoppingCart className={styles.navigation__icons} />
-          <h5>Explore Store</h5>
+          <h5>Browse Store</h5>
         </NavLink>
 
         <NavLink
@@ -32,7 +32,9 @@ const NavBar = () => {
 
         <NavLink className={styles.navigation__links}>
           <MdOutlineShoppingBag className={styles.navigation__icons} />
-          <h5>Cart</h5>
+          <h5>
+            Cart: <span>0</span>
+          </h5>
         </NavLink>
       </nav>
     </>
