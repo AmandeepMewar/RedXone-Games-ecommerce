@@ -1,0 +1,19 @@
+.add-to-cart__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.add-to-cart__button {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--clr-grey-4);
+  transition: all 0.2s;
+
+  &:hover {
+    color: var(--clr-red);
+  }
+}

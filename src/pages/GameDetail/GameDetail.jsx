@@ -11,6 +11,7 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 import styles from "./GameDetail.module.scss";
 import Loader from "../../ui/Loader/Loader";
 import Button from "../../ui/Button/Button";
+import AddToCart from "../../components/AddToCart/AddToCart";
 const GameDetail = () => {
   const navigate = useNavigate();
   const params = useParams();
@@ -20,13 +21,12 @@ const GameDetail = () => {
   const [loading, setLoading] = useState(true);
 
   const query = "/" + params.id + "?";
-  console.log(query);
 
   const fetchData = async () => {
     setLoading(true);
     const response = await api(query);
-    console.log(response);
     setGameData(response);
+    console.log(response);
     setTimeout(() => setLoading(false), 1000);
   };
 
@@ -35,10 +35,10 @@ const GameDetail = () => {
   }, []);
 
   const handleGoBack = () => {
-    navigate(-1);
+    navigate("/browse");
   };
   return (
-    <div>
+    <div className={styles["container"]}>
       <NavBar />
       <main className={styles["main"]}>
         {loading ? (
@@ -57,12 +57,49 @@ const GameDetail = () => {
               <div className={styles["carousel-container"]}>
                 <Carousel id={params.id} />
               </div>
-              <div className={styles["game-details__description"]}>
-                <h2>About</h2>
 
-                <p className={styles["game-details__para"]}>
-                  {gameData.description_raw}
-                </p>
+              <div className={styles["game-details__description"]}>
+                <h3>About</h3>
+
+                <div>
+                  <p>
+                    Published By:{" "}
+                    {gameData.publishers.map(p => p.name).join(", ")}
+                  </p>
+                </div>
+
+                <div>
+                  <p>
+                    Developers:{" "}
+                    {gameData.developers.map(d => d.name).join(", ")}
+                  </p>
+                </div>
+
+                <div>
+                  <p>Genres: {gameData.genres.map(g => g.name).join(", ")}</p>
+                </div>
+
+                <div>
+                  <p>Rating: {gameData.rating}</p>
+                </div>
+
+                <div>
+                  <p>
+                    Release Date:{" "}
+                    {new Date(gameData.released).toLocaleDateString()}
+                  </p>
+                </div>
+
+                <div>
+                  <p>
+                    Platforms:{" "}
+                    {gameData.platforms.map(p => p.platform.name).join(", ")}
+                  </p>
+                </div>
+
+                <div className="purchase">
+                  <AddToCart />
+                </div>
               </div>
             </div>
           </div>

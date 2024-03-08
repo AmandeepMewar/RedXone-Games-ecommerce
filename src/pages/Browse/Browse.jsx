@@ -14,9 +14,12 @@ const Explore = () => {
 
   const fetchData = async () => {
     setLoading(true);
+
     const responseData = await api(query);
     setGameData(responseData.results);
     setTimeout(() => setLoading(false), 1000);
+
+    setLoading(false);
   };
 
   useEffect(() => {
