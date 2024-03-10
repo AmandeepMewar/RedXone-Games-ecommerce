@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div className={styles["home-container"]}>
       <header>
-        <NavBar />
+        <NavBar browse={true} />
       </header>
       <video autoPlay loop muted className={styles.video}>
         <source src={video} type="video/mp4" />

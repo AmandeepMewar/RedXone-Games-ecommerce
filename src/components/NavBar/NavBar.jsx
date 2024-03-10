@@ -5,8 +5,9 @@ import { SiRiotgames } from "react-icons/si";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { FiGithub } from "react-icons/fi";
 import { MdOutlineShoppingBag } from "react-icons/md";
+import SearchBar from "../SearchBar/SearchBar";
 
-const NavBar = () => {
+const NavBar = ({ browse = false }) => {
   return (
     <>
       <nav className={styles.navigation}>
@@ -16,10 +17,14 @@ const NavBar = () => {
             <span>Red</span>Xone
           </h2>
         </NavLink>
-        <NavLink to="/browse" className={styles.navigation__links}>
-          <MdOutlineShoppingCart className={styles.navigation__icons} />
-          <h5>Browse Store</h5>
-        </NavLink>
+        {browse ? (
+          <NavLink to="/browse" className={styles.navigation__links}>
+            <MdOutlineShoppingCart className={styles.navigation__icons} />
+            <h5>Browse Store</h5>
+          </NavLink>
+        ) : (
+          <SearchBar />
+        )}
 
         <NavLink
           to="https://github.com/AmandeepMewar/RedXone-Games-ecommerce"

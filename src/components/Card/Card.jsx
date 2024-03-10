@@ -12,6 +12,7 @@ const Card = props => {
         <div className={styles["card-title"]}>
           <h3>{props.name}</h3>
         </div>
+        <AddToCart />
       </div>
     </Link>
   );

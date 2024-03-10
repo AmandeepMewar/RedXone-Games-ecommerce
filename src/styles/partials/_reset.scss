@@ -52,5 +52,7 @@ img {
 input,
 button,
 textarea {
+  border: none;
+  outline: none;
   font: inherit;
 }
