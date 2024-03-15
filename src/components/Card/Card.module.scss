@@ -5,17 +5,7 @@
   background-color: var(--clr-grey-1);
   border-radius: 2rem;
   overflow: hidden;
-  user-select: none;
-  cursor: pointer;
   transition: all 0.2s;
-
-  &:hover {
-    filter: brightness(1.15);
-  }
-
-  &:hover .card-image img {
-    transform: scale(1.01);
-  }
 }
 
 .card-image {
@@ -49,6 +39,12 @@
 
 .card-title {
   h3 {
+    display: inline-block;
     color: var(--clr-grey-6);
+    transition: all 0.1s;
+
+    &:hover {
+      color: var(--clr-grey-8);
+    }
   }
 }

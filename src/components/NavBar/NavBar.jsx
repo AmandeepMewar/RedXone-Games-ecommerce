@@ -7,7 +7,19 @@ import { FiGithub } from "react-icons/fi";
 import { MdOutlineShoppingBag } from "react-icons/md";
 import SearchBar from "../SearchBar/SearchBar";
 
+import Button from "../../ui/Button/Button";
+
+import { useDispatch, useSelector } from "react-redux";
+import { cartActions } from "../../features/cart/cartSlice";
+import Cart from "../Cart/Cart";
+
 const NavBar = ({ browse = false }) => {
+  const dispatch = useDispatch();
+  const showCart = useSelector(state => state.cart.showCart);
+
+  const handleCart = () => {
+    dispatch(cartActions.setShowCart());
+  };
   return (
     <>
       <nav className={styles.navigation}>
@@ -35,12 +47,14 @@ const NavBar = ({ browse = false }) => {
           <h5>AmandeepMewar</h5>
         </NavLink>
 
-        <NavLink className={styles.navigation__links}>
+        <Button className={styles["navigation__cart-btn"]} onClick={handleCart}>
           <MdOutlineShoppingBag className={styles.navigation__icons} />
           <h5>
             Cart: <span>0</span>
           </h5>
-        </NavLink>
+        </Button>
+
+        {showCart && <Cart />}
       </nav>
     </>
   );

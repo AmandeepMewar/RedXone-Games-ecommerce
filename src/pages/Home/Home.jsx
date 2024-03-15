@@ -25,6 +25,8 @@ const Home = () => {
             awaits – elevate your play with us!
           </p>
         </section>
+
+        <section></section>
       </main>
     </div>
   );

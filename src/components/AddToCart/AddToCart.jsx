@@ -1,15 +1,38 @@
 import Button from "../../ui/Button/Button";
-import { FaCartPlus } from "react-icons/fa6";
-
+import { IoMdAdd } from "react-icons/io";
+import { FaCheck } from "react-icons/fa6";
 import styles from "./AddToCart.module.scss";
+import priceCalc from "../../utils/priceCalc";
+import { useState } from "react";
 
-const AddToCart = () => {
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../features/cart/cartSlice";
+
+const AddToCart = ({ rating }) => {
+  const dispatch = useDispatch();
+  const [Added, setAdded] = useState(false);
+
+  const handleAddToCart = () => {
+    setAdded(true);
+    dispatch(cartActions.addItem("hello"));
+  };
+  const price = priceCalc(rating);
   return (
-    <div className={styles["add-to-cart__container"]}>
-      <Button className={styles["add-to-cart__button"]}>
-        Add to cart <FaCartPlus />
-      </Button>
-      <p>$20.99</p>
+    <div className={styles["add-to-cart"]}>
+      {Added ? (
+        <p className={styles["add-to-cart__added"]}>
+          Added
+          <FaCheck style={{ width: "1.2rem", height: "1.2rem" }} />
+        </p>
+      ) : (
+        <Button
+          className={styles["add-to-cart__button"]}
+          onClick={handleAddToCart}
+        >
+          Add to cart <IoMdAdd />
+        </Button>
+      )}
+      <p>${price}</p>
     </div>
   );
 };

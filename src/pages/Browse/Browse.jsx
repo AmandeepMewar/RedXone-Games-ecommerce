@@ -10,10 +10,13 @@ import Loader from "../../ui/Loader/Loader";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { gameActions } from "../../features/game/gameSlice";
+import Header from "../../components/Header/Header";
 
 const Browse = () => {
   const gameData = useSelector(state => state.game.games);
   const loading = useSelector(state => state.game.loading);
+  const PageHeader = useSelector(state => state.game.header);
+  const searched = useSelector(state => state.game.searched);
   const dispatch = useDispatch();
 
   const query = "?dates=2023-01-01,2024-12-31&page_size=40&";
@@ -21,13 +24,18 @@ const Browse = () => {
   const fetchData = async () => {
     dispatch(gameActions.setLoading(true));
     const responseData = await api(query);
+    console.log(responseData.results);
     dispatch(gameActions.updateGames(responseData.results));
-    setTimeout(() => dispatch(gameActions.setLoading(false)), 1000);
+    dispatch(gameActions.setHeader("New and Trending"));
+
+    dispatch(gameActions.setLoading(false));
+    dispatch(gameActions.setSearched(false));
   };
 
   useEffect(() => {
     fetchData();
   }, []);
+
   return (
     <div className={styles["explore-container"]}>
       <header>
@@ -39,7 +47,8 @@ const Browse = () => {
           <Loader />
         ) : (
           <div className={styles["game-list"]}>
-            <h1>Trending and interesting</h1>
+            {/* <h1>{PageHeader}</h1> */}
+            {searched ? <Header title={PageHeader} /> : <h1>{PageHeader}</h1>}
             <Grid>
               {gameData &&
                 gameData.map(game => <Card key={game.id} {...game} />)}

@@ -1,19 +1,29 @@
-.add-to-cart__container {
+.add-to-cart {
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 1.5rem;
   font-weight: 500;
-}
+  line-height: 1;
 
-.add-to-cart__button {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  color: var(--clr-grey-4);
-  transition: all 0.3s;
+  &__button {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--clr-grey-4);
+    transition: all 0.3s;
 
-  &:hover {
-    color: var(--clr-red);
+    &:hover {
+      color: var(--clr-red);
+    }
+  }
+
+  &__added {
+    color: var(--clr-green);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: default;
+    user-select: none;
   }
 }

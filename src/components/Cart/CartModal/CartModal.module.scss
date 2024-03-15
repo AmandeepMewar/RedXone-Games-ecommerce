@@ -1,0 +1,51 @@
+.cart {
+  position: relative;
+}
+
+.cart-modal {
+  max-width: 80%;
+  width: 40rem;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  background-color: var(--clr-grey-1);
+  padding: 2rem;
+  animation: slidein 0.3s linear;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.background {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  backdrop-filter: brightness(0.5);
+  position: fixed;
+  z-index: 2;
+  overflow-y: hidden;
+}
+
+@keyframes slidein {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 40rem;
+  }
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}

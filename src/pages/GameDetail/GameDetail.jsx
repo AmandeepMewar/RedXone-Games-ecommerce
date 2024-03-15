@@ -4,16 +4,13 @@ import { api } from "../../api/api";
 import { useEffect, useState } from "react";
 import Carousel from "../../components/Carousel/Carousel";
 
-import { useNavigate } from "react-router-dom";
-
-import { IoMdArrowRoundBack } from "react-icons/io";
-
 import styles from "./GameDetail.module.scss";
 import Loader from "../../ui/Loader/Loader";
 import Button from "../../ui/Button/Button";
 import AddToCart from "../../components/AddToCart/AddToCart";
+import Header from "../../components/Header/Header";
+
 const GameDetail = () => {
-  const navigate = useNavigate();
   const params = useParams();
 
   const [gameData, setGameData] = useState(null);
@@ -34,9 +31,6 @@ const GameDetail = () => {
     fetchData();
   }, []);
 
-  const handleGoBack = () => {
-    navigate("/browse");
-  };
   return (
     <div className={styles["container"]}>
       <NavBar />
@@ -45,20 +39,14 @@ const GameDetail = () => {
           <Loader />
         ) : (
           <div className={styles["game-details"]}>
-            <div className={styles["game-details__header"]}>
-              <Button className={styles["back-button"]} onClick={handleGoBack}>
-                <IoMdArrowRoundBack className={styles["back-button__icon"]} />
-                Store
-              </Button>
-              <h1>{gameData.name}</h1>
-            </div>
+            <Header title={gameData.name} />
 
             <div className={styles["game-details__content"]}>
               <div className={styles["carousel-container"]}>
                 <Carousel id={params.id} />
               </div>
 
-              <div className={styles["game-details__description"]}>
+              <div className={styles["game-details__about"]}>
                 <h3>About</h3>
 
                 <div>
@@ -98,7 +86,7 @@ const GameDetail = () => {
                 </div>
 
                 <div className="purchase">
-                  <AddToCart />
+                  <AddToCart rating={gameData.rating} />
                 </div>
               </div>
             </div>

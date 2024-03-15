@@ -4,17 +4,19 @@ import { Link } from "react-router-dom";
 
 const Card = props => {
   return (
-    <Link to={`/browse/${props.id}`} className={styles["card"]}>
-      <div className={styles["card-image"]}>
+    <div className={styles["card"]}>
+      <Link to={`/browse/${props.id}`} className={styles["card-image"]}>
         <img src={props.background_image} alt={props.name} loading="lazy" />
-      </div>
+      </Link>
       <div className={styles["card-info"]}>
         <div className={styles["card-title"]}>
-          <h3>{props.name}</h3>
+          <Link to={`/browse/${props.id}`}>
+            <h3>{props.name}</h3>
+          </Link>
         </div>
-        <AddToCart />
+        <AddToCart rating={props.rating} />
       </div>
-    </Link>
+    </div>
   );
 };
 

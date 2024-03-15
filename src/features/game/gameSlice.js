@@ -4,6 +4,7 @@ const initialState = {
   loading: true,
   games: null,
   header: "",
+  searched: false,
 };
 
 const gameSlice = createSlice({
@@ -15,6 +16,12 @@ const gameSlice = createSlice({
     },
     setLoading(state, action) {
       state.loading = action.payload;
+    },
+    setHeader(state, action) {
+      state.header = action.payload;
+    },
+    setSearched(state, action) {
+      state.searched = action.payload;
     },
   },
 });

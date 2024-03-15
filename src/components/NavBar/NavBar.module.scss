@@ -3,7 +3,6 @@
   display: flex;
   padding: 2rem;
   align-items: center;
-  margin: 1rem;
   gap: 3rem;
 
   &__logo {
@@ -50,6 +49,24 @@
     // &:hover .navigation__logo {
     //   transform: scale(1.4);
     // }
+  }
+
+  &__cart-btn {
+    display: flex;
+    align-items: center;
+    padding: 0rem 2rem;
+    gap: 1.2rem;
+    transition: color 0.2s;
+
+    h5 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    &:hover {
+      color: var(--clr-grey-9);
+    }
   }
 
   &__icons {
