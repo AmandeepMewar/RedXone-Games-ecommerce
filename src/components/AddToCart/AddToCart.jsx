@@ -5,21 +5,25 @@ import styles from "./AddToCart.module.scss";
 import priceCalc from "../../utils/priceCalc";
 import { useState } from "react";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../../features/cart/cartSlice";
 
-const AddToCart = ({ rating }) => {
+const AddToCart = props => {
+  const { id, rating, name } = props;
+
   const dispatch = useDispatch();
-  const [Added, setAdded] = useState(false);
+
+  const cartItems = useSelector(state => state.cart.cartItems);
+  const price = priceCalc(rating);
 
   const handleAddToCart = () => {
-    setAdded(true);
-    dispatch(cartActions.addItem("hello"));
+    dispatch(cartActions.addItem({ id: id, name: name, price: price }));
+    console.log(cartItems);
   };
-  const price = priceCalc(rating);
+
   return (
     <div className={styles["add-to-cart"]}>
-      {Added ? (
+      {cartItems.some(obj => obj.id == id) ? (
         <p className={styles["add-to-cart__added"]}>
           Added
           <FaCheck style={{ width: "1.2rem", height: "1.2rem" }} />

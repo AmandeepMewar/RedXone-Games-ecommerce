@@ -1,16 +1,32 @@
+import { useDispatch, useSelector } from "react-redux";
 import Button from "../../../ui/Button/Button";
 
 import styles from "./CartItem.module.scss";
-const CartItem = () => {
+
+import { IoMdClose } from "react-icons/io";
+import { cartActions } from "../../../features/cart/cartSlice";
+const CartItem = props => {
+  const { id, name, price } = props;
+
+  const dispatch = useDispatch();
+
+  // const items = useSelector(state => state.cart.cartItem);
+
+  const handleRemove = () => {
+    console.log(id);
+    dispatch(cartActions.deleteItem(id));
+  };
   return (
-    <div>
-      <div>
-        <p>Gta Sandreas</p>
+    <div className={styles["cart-item"]}>
+      <div className={styles["left"]}>
+        <p>{name}</p>
       </div>
 
-      <div>
-        <p>$18.99</p>
-        <Button></Button>
+      <div className={styles["right"]}>
+        <p>{price}</p>
+        <Button className={styles["close"]} onClick={handleRemove}>
+          <IoMdClose className={styles["close__icon"]} />
+        </Button>
       </div>
     </div>
   );

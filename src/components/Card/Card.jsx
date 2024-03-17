@@ -14,7 +14,7 @@ const Card = props => {
             <h3>{props.name}</h3>
           </Link>
         </div>
-        <AddToCart rating={props.rating} />
+        <AddToCart {...props} />
       </div>
     </div>
   );

@@ -1,0 +1,38 @@
+.cart-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--clr-grey-2);
+  padding: 1.4rem 2rem;
+  border-radius: 1rem;
+  gap: 2rem;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+
+  p {
+    color: var(--clr-grey-5);
+    font-size: 1.4rem;
+  }
+}
+
+.close {
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    background-color: var(--clr-grey-1);
+    border-radius: 50%;
+    padding: 0.4rem;
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--clr-grey-9);
+    }
+  }
+}

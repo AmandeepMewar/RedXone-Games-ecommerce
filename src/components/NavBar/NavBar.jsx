@@ -13,9 +13,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../../features/cart/cartSlice";
 import Cart from "../Cart/Cart";
 
+import { getTotalCartQuantity } from "../../features/cart/cartSlice";
+
 const NavBar = ({ browse = false }) => {
   const dispatch = useDispatch();
   const showCart = useSelector(state => state.cart.showCart);
+
+  const totalQuantity = useSelector(getTotalCartQuantity);
 
   const handleCart = () => {
     dispatch(cartActions.setShowCart());
@@ -50,7 +54,7 @@ const NavBar = ({ browse = false }) => {
         <Button className={styles["navigation__cart-btn"]} onClick={handleCart}>
           <MdOutlineShoppingBag className={styles.navigation__icons} />
           <h5>
-            Cart: <span>0</span>
+            Cart: <span>{totalQuantity}</span>
           </h5>
         </Button>
 

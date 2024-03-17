@@ -13,7 +13,9 @@ const cartSlice = createSlice({
       state.cartItems.push(action.payload);
     },
     deleteItem(state, action) {
-      state.cartItems.filter(item => item.gameId != action.payload);
+      state.cartItems = state.cartItems.filter(
+        item => item.id != action.payload
+      );
     },
     clearCart(state) {
       state.cartItems = [];
@@ -27,3 +29,8 @@ const cartSlice = createSlice({
 export const cartActions = cartSlice.actions;
 
 export default cartSlice.reducer;
+
+export const getTotalCartQuantity = state => state.cart.cartItems.length;
+
+export const getTotalCartPrice = state =>
+  state.cart.cartItems.reduce((sum, item) => sum + Number(item.price), 0);

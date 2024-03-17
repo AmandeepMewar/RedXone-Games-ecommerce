@@ -86,7 +86,7 @@ const GameDetail = () => {
                 </div>
 
                 <div className="purchase">
-                  <AddToCart rating={gameData.rating} />
+                  <AddToCart {...gameData} />
                 </div>
               </div>
             </div>
