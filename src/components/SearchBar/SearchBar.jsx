@@ -19,15 +19,16 @@ const SearchBar = () => {
 
   const [input, setInput] = useState("");
 
-  const fetchData = async query => {
+  const fetchData = async () => {
     dispatch(gameActions.setLoading(true));
-    const response = await api(
-      "?search=" + input.trim().replaceAll(" ", "-") + "&search_precise=true&"
+    const responseData = await api(
+      "?search=" + input.trim().replaceAll(" ", "-") + "&page_size=50&"
     );
-    // console.log(response.results);
+    console.log(responseData.results);
 
     navigate("/browse");
-    dispatch(gameActions.updateGames(response.results));
+    const data = responseData.results.filter(item => item.rating);
+    dispatch(gameActions.updateGames(data));
     dispatch(gameActions.setHeader(`"${input.trim()}"`));
     // setTimeout(() => dispatch(gameActions.setLoading(false)), 1000);
     dispatch(gameActions.setLoading(false));

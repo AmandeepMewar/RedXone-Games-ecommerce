@@ -2,8 +2,8 @@ import Button from "../../ui/Button/Button";
 import { IoMdAdd } from "react-icons/io";
 import { FaCheck } from "react-icons/fa6";
 import styles from "./AddToCart.module.scss";
-import priceCalc from "../../utils/priceCalc";
-import { useState } from "react";
+
+import { priceCalc } from "../../utils/helpers";
 
 import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../../features/cart/cartSlice";

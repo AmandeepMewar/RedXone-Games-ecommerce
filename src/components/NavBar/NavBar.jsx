@@ -52,7 +52,11 @@ const NavBar = ({ browse = false }) => {
         </NavLink>
 
         <Button className={styles["navigation__cart-btn"]} onClick={handleCart}>
-          <MdOutlineShoppingBag className={styles.navigation__icons} />
+          <MdOutlineShoppingBag
+            className={`${styles.navigation__icons} ${
+              totalQuantity && styles.active
+            }`}
+          />
           <h5>
             Cart: <span>{totalQuantity}</span>
           </h5>

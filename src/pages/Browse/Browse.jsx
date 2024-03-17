@@ -19,13 +19,13 @@ const Browse = () => {
   const searched = useSelector(state => state.game.searched);
   const dispatch = useDispatch();
 
-  const query = "?dates=2023-01-01,2024-12-31&page_size=40&";
+  const query = "?dates=2023-01-01,2024-12-31&page_size=50&";
 
   const fetchData = async () => {
     dispatch(gameActions.setLoading(true));
     const responseData = await api(query);
-    console.log(responseData.results);
-    dispatch(gameActions.updateGames(responseData.results));
+    const data = responseData.results.filter(item => item.rating);
+    dispatch(gameActions.updateGames(data));
     dispatch(gameActions.setHeader("New and Trending"));
 
     dispatch(gameActions.setLoading(false));
