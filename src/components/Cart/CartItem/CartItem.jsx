@@ -10,8 +10,6 @@ const CartItem = props => {
 
   const dispatch = useDispatch();
 
-  // const items = useSelector(state => state.cart.cartItem);
-
   const handleRemove = () => {
     console.log(id);
     dispatch(cartActions.deleteItem(id));
@@ -23,7 +21,7 @@ const CartItem = props => {
       </div>
 
       <div className={styles["right"]}>
-        <p>{price}</p>
+        <p>${price}</p>
         <Button className={styles["close"]} onClick={handleRemove}>
           <IoMdClose className={styles["close__icon"]} />
         </Button>

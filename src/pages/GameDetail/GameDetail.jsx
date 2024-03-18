@@ -6,7 +6,7 @@ import Carousel from "../../components/Carousel/Carousel";
 
 import styles from "./GameDetail.module.scss";
 import Loader from "../../ui/Loader/Loader";
-import Button from "../../ui/Button/Button";
+
 import AddToCart from "../../components/AddToCart/AddToCart";
 import Header from "../../components/Header/Header";
 
@@ -47,45 +47,59 @@ const GameDetail = () => {
               </div>
 
               <div className={styles["game-details__about"]}>
-                <h3>About</h3>
+                <div className={styles["game-details__info"]}>
+                  <h3>About</h3>
 
-                <div>
-                  <p>
-                    Published By:{" "}
-                    {gameData.publishers.map(p => p.name).join(", ")}
-                  </p>
+                  <div>
+                    <p className={styles["game-details__url"]}>
+                      <a href={gameData.website}>
+                        {gameData.name}'s Official Website
+                      </a>
+                    </p>
+                  </div>
+                  <div>
+                    <p>
+                      <span>Published By: </span>
+                      {gameData.publishers.map(p => p.name).join(", ")}
+                    </p>
+                  </div>
+
+                  <div>
+                    <p>
+                      <span>Developers: </span>
+                      {gameData.developers.map(d => d.name).join(", ")}
+                    </p>
+                  </div>
+
+                  <div>
+                    <p>
+                      <span>Genres:</span>{" "}
+                      {gameData.genres.map(g => g.name).join(", ")}
+                    </p>
+                  </div>
+
+                  <div>
+                    <p>
+                      <span>Rating:</span> {gameData.rating}
+                    </p>
+                  </div>
+
+                  <div>
+                    <p>
+                      <span>Release Date: </span>
+                      {new Date(gameData.released).toLocaleDateString()}
+                    </p>
+                  </div>
+
+                  <div>
+                    <p>
+                      <span>Platforms: </span>
+                      {gameData.platforms.map(p => p.platform.name).join(", ")}
+                    </p>
+                  </div>
                 </div>
 
-                <div>
-                  <p>
-                    Developers:{" "}
-                    {gameData.developers.map(d => d.name).join(", ")}
-                  </p>
-                </div>
-
-                <div>
-                  <p>Genres: {gameData.genres.map(g => g.name).join(", ")}</p>
-                </div>
-
-                <div>
-                  <p>Rating: {gameData.rating}</p>
-                </div>
-
-                <div>
-                  <p>
-                    Release Date:{" "}
-                    {new Date(gameData.released).toLocaleDateString()}
-                  </p>
-                </div>
-
-                <div>
-                  <p>
-                    Platforms:{" "}
-                    {gameData.platforms.map(p => p.platform.name).join(", ")}
-                  </p>
-                </div>
-
-                <div className="purchase">
+                <div className={styles["purchase"]}>
                   <AddToCart {...gameData} />
                 </div>
               </div>

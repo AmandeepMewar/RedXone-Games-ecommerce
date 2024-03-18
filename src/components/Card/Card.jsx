@@ -14,7 +14,9 @@ const Card = props => {
             <h3>{props.name}</h3>
           </Link>
         </div>
-        <AddToCart {...props} />
+        <div className={styles["add-to-cart"]}>
+          <AddToCart {...props} />
+        </div>
       </div>
     </div>
   );

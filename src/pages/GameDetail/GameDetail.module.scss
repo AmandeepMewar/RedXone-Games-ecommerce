@@ -12,9 +12,20 @@
 
   padding: 0 4rem;
 
+  &__url {
+    color: var(--clr-grey-5);
+
+    a {
+      transition: color 0.2s;
+    }
+
+    :hover {
+      color: var(--clr-grey-8);
+    }
+  }
+
   &__content {
     width: 100%;
-    height: 45rem;
     display: flex;
     gap: 3rem;
     padding: 3rem 0;
@@ -24,14 +35,40 @@
     padding: 2rem 4rem;
     background-color: var(--clr-grey-1);
     border-radius: 2rem;
-    overflow: scroll;
+    display: flex;
     flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-between;
 
     h2 {
       font-size: 3.2rem;
       margin-bottom: 0.4rem;
       font-weight: 900;
       color: var(--clr-grey-6);
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--clr-grey-4);
+
+    h3 {
+      font-size: 2.6rem;
+      color: var(--clr-grey-8);
+    }
+
+    span {
+      color: var(--clr-grey-5);
+      cursor: default;
+
+      &:hover {
+        color: var(--clr-grey-8);
+      }
     }
   }
 
@@ -44,4 +81,9 @@
     line-height: 1.8;
     color: var(--clr-grey);
   }
+}
+
+.purchase {
+  font-size: 2rem;
+  flex-direction: row-reverse;
 }

@@ -24,10 +24,21 @@ body {
   background: var(--clr-bg);
 }
 
+// *::-webkit-scrollbar {
+//   display: none;
+// }
+
 *::-webkit-scrollbar {
-  display: none;
+  display: block;
+  width: 0.8rem;
+  background-color: var(--clr-grey-3);
+  border-radius: 2rem;
 }
 
+*::-webkit-scrollbar-thumb {
+  border-radius: 2rem;
+  background-color: var(--clr-grey-5);
+}
 button {
   all: unset;
   cursor: pointer;

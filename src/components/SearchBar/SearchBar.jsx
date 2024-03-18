@@ -1,45 +1,20 @@
 import { IoSearch } from "react-icons/io5";
 import styles from "./SearchBar.module.scss";
 import { useState } from "react";
-
-import { useDispatch } from "react-redux";
-import { api } from "../../api/api";
-import { gameActions } from "../../features/game/gameSlice";
 import Button from "../../ui/Button/Button";
 
-import {
-  useNavigate,
-  useSearchParams,
-  createSearchParams,
-} from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 const SearchBar = () => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const [input, setInput] = useState("");
-
-  const fetchData = async () => {
-    dispatch(gameActions.setLoading(true));
-    const responseData = await api(
-      "?search=" + input.trim().replaceAll(" ", "-") + "&page_size=50&"
-    );
-    console.log(responseData.results);
-
-    navigate("/browse");
-    const data = responseData.results.filter(item => item.rating);
-    dispatch(gameActions.updateGames(data));
-    dispatch(gameActions.setHeader(`"${input.trim()}"`));
-    // setTimeout(() => dispatch(gameActions.setLoading(false)), 1000);
-    dispatch(gameActions.setLoading(false));
-  };
 
   const handleSearch = e => {
     e.preventDefault();
     if (!input.trim()) return;
     else {
-      fetchData();
-      dispatch(gameActions.setSearched(true));
+      setSearchParams({ search: input });
     }
   };
 

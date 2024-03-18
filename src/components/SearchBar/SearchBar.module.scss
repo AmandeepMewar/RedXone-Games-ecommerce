@@ -14,20 +14,22 @@
   padding: 0.6rem 1.6rem;
   padding-top: 8px;
   gap: 1.2rem;
+  transition: transform 0.2s;
+
+  &:active {
+    transform: scale(0.98);
+  }
 
   &__input {
     width: 40rem;
     font-size: 1.4rem;
     background-color: var(--clr-grey-1);
     color: var(--clr-text);
+    font-weight: 500;
 
     &::placeholder {
       padding: 1px 0;
       font-size: 1.4rem;
-    }
-
-    &:focus {
-      background-color: var(--clr-grey-1);
     }
   }
 
