@@ -3,6 +3,7 @@ import styles from "./Card.module.scss";
 import { Link } from "react-router-dom";
 
 const Card = props => {
+  console.log(props);
   return (
     <div className={styles["card"]}>
       <Link to={`/browse/${props.id}`} className={styles["card-image"]}>

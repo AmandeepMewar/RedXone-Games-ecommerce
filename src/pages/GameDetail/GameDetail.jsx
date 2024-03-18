@@ -9,9 +9,12 @@ import Loader from "../../ui/Loader/Loader";
 
 import AddToCart from "../../components/AddToCart/AddToCart";
 import Header from "../../components/Header/Header";
-
+import { gameActions } from "../../features/game/gameSlice";
+import { useDispatch } from "react-redux";
 const GameDetail = () => {
   const params = useParams();
+
+  const dispatch = useDispatch();
 
   const [gameData, setGameData] = useState(null);
 
@@ -25,6 +28,7 @@ const GameDetail = () => {
     setGameData(response);
     console.log(response);
     setTimeout(() => setLoading(false), 1000);
+    dispatch(gameActions.setShowBackButton(true));
   };
 
   useEffect(() => {

@@ -3,18 +3,18 @@ import { IoMdAdd } from "react-icons/io";
 import { FaCheck } from "react-icons/fa6";
 import styles from "./AddToCart.module.scss";
 
-import { priceCalc } from "../../utils/helpers";
+import { calculateGamePrice } from "../../utils/helpers";
 
 import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../../features/cart/cartSlice";
 
 const AddToCart = props => {
-  const { id, rating, name } = props;
+  const { id, rating_top, rating, released, name } = props;
 
   const dispatch = useDispatch();
 
   const cartItems = useSelector(state => state.cart.cartItems);
-  const price = priceCalc(rating);
+  const price = calculateGamePrice(rating, rating_top, released);
 
   const handleAddToCart = () => {
     dispatch(cartActions.addItem({ id: id, name: name, price: price }));

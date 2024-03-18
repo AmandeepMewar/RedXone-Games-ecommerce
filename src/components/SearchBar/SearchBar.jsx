@@ -3,9 +3,10 @@ import styles from "./SearchBar.module.scss";
 import { useState } from "react";
 import Button from "../../ui/Button/Button";
 
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 const SearchBar = () => {
+  const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
 
   const [input, setInput] = useState("");
@@ -14,6 +15,7 @@ const SearchBar = () => {
     e.preventDefault();
     if (!input.trim()) return;
     else {
+      navigate("/browse");
       setSearchParams({ search: input });
     }
   };

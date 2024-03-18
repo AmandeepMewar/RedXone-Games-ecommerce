@@ -16,7 +16,7 @@ const CartModal = () => {
   const dispatch = useDispatch();
 
   const cartItems = useSelector(state => state.cart.cartItems);
-  const totalPrice = useSelector(getTotalCartPrice);
+  const totalPrice = useSelector(getTotalCartPrice).toFixed(2);
   const totalQuantity = useSelector(getTotalCartQuantity);
 
   const handleCart = () => {
