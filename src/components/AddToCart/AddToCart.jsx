@@ -3,7 +3,7 @@ import { IoMdAdd } from "react-icons/io";
 import { FaCheck } from "react-icons/fa6";
 import styles from "./AddToCart.module.scss";
 
-import { calculateGamePrice } from "../../utils/helpers";
+import { calculateGamePrice, formatCurrency } from "../../utils/helpers";
 
 import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../../features/cart/cartSlice";
@@ -21,6 +21,8 @@ const AddToCart = props => {
     console.log(cartItems);
   };
 
+  const formattedPrice = formatCurrency(price);
+
   return (
     <div className={styles["add-to-cart"]}>
       {cartItems.some(obj => obj.id == id) ? (
@@ -36,7 +38,7 @@ const AddToCart = props => {
           Add to cart <IoMdAdd />
         </Button>
       )}
-      <p>${price}</p>
+      <p>{formattedPrice}</p>
     </div>
   );
 };

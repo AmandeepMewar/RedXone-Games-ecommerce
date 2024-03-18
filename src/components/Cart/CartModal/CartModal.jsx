@@ -11,13 +11,16 @@ import {
   getTotalCartQuantity,
   getTotalCartPrice,
 } from "../../../features/cart/cartSlice";
+import { formatCurrency } from "../../../utils/helpers";
 
 const CartModal = () => {
   const dispatch = useDispatch();
 
   const cartItems = useSelector(state => state.cart.cartItems);
-  const totalPrice = useSelector(getTotalCartPrice).toFixed(2);
+  let totalPrice = useSelector(getTotalCartPrice);
   const totalQuantity = useSelector(getTotalCartQuantity);
+
+  totalPrice = formatCurrency(totalPrice);
 
   const handleCart = () => {
     dispatch(cartActions.setShowCart());
@@ -60,7 +63,7 @@ const CartModal = () => {
         </div>
 
         <div className={styles["checkout"]}>
-          <p>Total: ${totalPrice}</p>
+          <p>Total: {totalPrice}</p>
 
           <Button className={styles["checkout-btn"]}>
             <h3>
