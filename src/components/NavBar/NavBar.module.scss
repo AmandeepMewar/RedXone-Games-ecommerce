@@ -2,10 +2,8 @@
 
 .navigation {
   width: 100%;
-  display: flex;
   padding: 2rem;
-  align-items: center;
-  justify-content: space-between;
+  @include flex($justCon: space-between, $alignIt: center);
   gap: 3rem;
 
   @include responsive(md) {
@@ -23,8 +21,7 @@
   }
 
   &__logo {
-    display: flex;
-    align-items: center;
+    @include flex($alignIt: center);
     padding: 0rem 2rem;
     gap: 1.2rem;
     cursor: pointer;
@@ -73,8 +70,7 @@
 
   &__links:link,
   :visited {
-    display: flex;
-    align-items: center;
+    @include flex($alignIt: center);
     padding: 0rem 2rem;
     gap: 1.2rem;
     cursor: pointer;
@@ -100,8 +96,7 @@
   }
 
   &__cart-btn {
-    display: flex;
-    align-items: center;
+    @include flex($alignIt: center);
     padding: 0rem 2rem;
     gap: 1.2rem;
     transition: color 0.2s;

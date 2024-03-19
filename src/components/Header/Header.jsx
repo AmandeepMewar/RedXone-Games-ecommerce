@@ -1,12 +1,10 @@
-import styles from "./Header.module.scss";
-
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+
+import styles from "./Header.module.scss";
+import { Button } from "../../ui";
 
 import { IoMdArrowRoundBack } from "react-icons/io";
-
-import Button from "../../ui/Button/Button";
-
-import { useSelector } from "react-redux";
 
 const Header = ({ title }) => {
   const showBackButton = useSelector(state => state.game.showBackButton);

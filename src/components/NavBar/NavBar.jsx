@@ -1,18 +1,16 @@
 import { NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
 import styles from "./NavBar.module.scss";
+import { SearchBar, Cart } from "../index";
+import { Button } from "../../ui";
+
+import { cartActions } from "../../features/cart/cartSlice";
+import { getTotalCartQuantity } from "../../features/cart/cartSlice";
 
 import { SiRiotgames } from "react-icons/si";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { MdOutlineShoppingBag } from "react-icons/md";
-import SearchBar from "../SearchBar/SearchBar";
-
-import Button from "../../ui/Button/Button";
-
-import { useDispatch, useSelector } from "react-redux";
-import { cartActions } from "../../features/cart/cartSlice";
-import Cart from "../Cart/Cart";
-
-import { getTotalCartQuantity } from "../../features/cart/cartSlice";
 
 const NavBar = ({ browse = false }) => {
   const dispatch = useDispatch();

@@ -1,5 +1,3 @@
-import styles from "./Cart.module.scss";
-
 import { createPortal } from "react-dom";
 import CartModal from "./CartModal/CartModal";
 

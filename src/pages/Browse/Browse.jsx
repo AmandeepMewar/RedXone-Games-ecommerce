@@ -1,17 +1,13 @@
-import Footer from "../../components/Footer/Footer";
-import NavBar from "../../components/NavBar/NavBar";
-import styles from "./Browse.module.scss";
-import { api } from "../../api/api";
 import { useEffect } from "react";
-import Card from "../../components/Card/Card";
-import Grid from "../../components/Grid/Grid";
-import Loader from "../../ui/Loader/Loader";
-
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { gameActions } from "../../features/game/gameSlice";
-import Header from "../../components/Header/Header";
+import { useSelector, useDispatch } from "react-redux";
 import { useLocation, useSearchParams } from "react-router-dom";
+
+import styles from "./Browse.module.scss";
+import { Footer, NavBar, Card, Grid, Header } from "../../components";
+import { api } from "../../api/api";
+import { Loader } from "../../ui";
+
+import { gameActions } from "../../features/game/gameSlice";
 
 const Browse = () => {
   const gameData = useSelector(state => state.game.games);

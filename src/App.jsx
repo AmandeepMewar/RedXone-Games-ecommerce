@@ -4,9 +4,8 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import Home from "./pages/Home/Home";
-import Browse from "./pages/Browse/Browse";
-import GameDetail from "./pages/GameDetail/GameDetail";
+
+import { Home, Browse, GameDetail } from "./pages";
 
 const routerDefinitions = createRoutesFromElements(
   <Route>

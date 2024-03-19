@@ -1,12 +1,13 @@
+import { Link } from "react-router-dom";
+
 import { Socials, FooterData } from "./FooterData";
 import styles from "./Footer.module.scss";
-import { Link } from "react-router-dom";
 
 import psBadge from "../../assets/images/playstore_badge.png";
 import asBadge from "../../assets/images/applestore_badge.svg";
-import gsBadge from "../../assets/images/galaxystore_badge.png";
 
 import { SiRiotgames } from "react-icons/si";
+
 const Footer = () => {
   return (
     <footer className={styles["footer"]}>

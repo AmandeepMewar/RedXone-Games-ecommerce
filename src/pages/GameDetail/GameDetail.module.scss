@@ -5,7 +5,7 @@
 }
 
 .carousel-container {
-  max-width: 60vw;
+  width: 60vw;
   max-height: 50rem;
 
   @include responsive(lg) {
@@ -15,7 +15,6 @@
 
 .game-details {
   width: 100%;
-
   padding: 0 4rem;
 
   @include responsive(lg) {
@@ -55,6 +54,8 @@
     flex-direction: column;
     justify-content: space-between;
 
+    @include flex($justCon: space-between, $flexDir: column);
+
     h2 {
       font-size: 3.2rem;
       margin-bottom: 0.4rem;
@@ -64,9 +65,7 @@
   }
 
   &__info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    @include flex($justCon: space-between, $flexDir: column);
     gap: 1rem;
     font-size: 1.5rem;
     font-weight: 500;

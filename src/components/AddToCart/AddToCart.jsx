@@ -1,12 +1,13 @@
-import Button from "../../ui/Button/Button";
-import { IoMdAdd } from "react-icons/io";
-import { FaCheck } from "react-icons/fa6";
-import styles from "./AddToCart.module.scss";
+import { useDispatch, useSelector } from "react-redux";
 
+import styles from "./AddToCart.module.scss";
+import { Button } from "../../ui";
+
+import { cartActions } from "../../features/cart/cartSlice";
 import { calculateGamePrice, formatCurrency } from "../../utils/helpers";
 
-import { useDispatch, useSelector } from "react-redux";
-import { cartActions } from "../../features/cart/cartSlice";
+import { IoMdAdd } from "react-icons/io";
+import { FaCheck } from "react-icons/fa6";
 
 const AddToCart = props => {
   const { id, rating_top, rating, released, name } = props;

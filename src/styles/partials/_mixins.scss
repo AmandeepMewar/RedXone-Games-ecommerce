@@ -1,3 +1,10 @@
+@mixin flex($justCon: "flex-start", $alignIt: "flex-start", $flexDir: "row") {
+  display: flex;
+  justify-content: $justCon;
+  align-items: $alignIt;
+  flex-direction: $flexDir;
+}
+
 $lg: 1000px;
 $md: 800px;
 $sm: 600px;

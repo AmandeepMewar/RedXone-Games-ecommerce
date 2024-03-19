@@ -1,15 +1,12 @@
 import { useState, useEffect } from "react";
-import { api } from "../../api/api";
 
+import { api } from "../../api/api";
 import styles from "./Carousel.module.scss";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-// import required modules
 import { Keyboard, Pagination, Navigation, Autoplay } from "swiper/modules";
 
 const Carousel = props => {
@@ -55,6 +52,7 @@ const Carousel = props => {
                 src={image.image}
                 loading="lazy"
                 className={styles["swiper__img"]}
+                alt={image.name}
               />
               <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
             </SwiperSlide>

@@ -1,8 +1,8 @@
+@use "../../../styles/partials/mixins" as *;
+
 .cart-item {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex($justCon: space-between, $alignIt: center);
   background-color: var(--clr-grey-2);
   min-height: 6rem;
   padding: 1rem 2rem;
@@ -13,8 +13,7 @@
 }
 
 .right {
-  display: flex;
-  align-items: center;
+  @include flex($alignIt: center);
   gap: 1.6rem;
 
   p {
@@ -23,8 +22,7 @@
 }
 
 .close {
-  display: flex;
-  align-items: center;
+  @include flex($alignIt: center);
 
   &__icon {
     width: 1.4rem;

@@ -1,10 +1,12 @@
-import { useDispatch, useSelector } from "react-redux";
-import Button from "../../../ui/Button/Button";
+import { useDispatch } from "react-redux";
 
 import styles from "./CartItem.module.scss";
+import { Button } from "../../../ui";
+
+import { cartActions } from "../../../features/cart/cartSlice";
 
 import { IoMdClose } from "react-icons/io";
-import { cartActions } from "../../../features/cart/cartSlice";
+
 const CartItem = props => {
   const { id, name, price } = props;
 

@@ -1,6 +1,7 @@
 import styles from "./Grid.module.scss";
-const Grid = props => {
-  return <div className={styles["grid-container"]}>{props.children}</div>;
+
+const Grid = ({ children }) => {
+  return <div className={styles["grid-container"]}>{children}</div>;
 };
 
 export default Grid;

@@ -1,11 +1,11 @@
-import video from "../../assets/game.mp4";
-import NavBar from "../../components/NavBar/NavBar";
-import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import styles from "./Home.module.scss";
 import { Link } from "react-router-dom";
-import { FaShoppingCart } from "react-icons/fa";
-import { FaCode } from "react-icons/fa";
+
+import styles from "./Home.module.scss";
+import video from "../../assets/game.mp4";
+import { NavBar } from "../../components";
+
+import { FaGithub, FaLinkedin, FaShoppingCart, FaCode } from "react-icons/fa";
+
 const Home = () => {
   return (
     <div className={styles["home-container"]}>

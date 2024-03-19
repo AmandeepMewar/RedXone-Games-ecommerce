@@ -1,9 +1,10 @@
-import { IoSearch } from "react-icons/io5";
-import styles from "./SearchBar.module.scss";
 import { useState } from "react";
-import Button from "../../ui/Button/Button";
-
 import { useNavigate, useSearchParams } from "react-router-dom";
+
+import styles from "./SearchBar.module.scss";
+import { Button } from "../../ui";
+
+import { IoSearch } from "react-icons/io5";
 
 const SearchBar = () => {
   const navigate = useNavigate();

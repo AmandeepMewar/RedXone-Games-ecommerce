@@ -1,11 +1,11 @@
-import Button from "../../../ui/Button/Button";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./CartModal.module.scss";
-import { cartActions } from "../../../features/cart/cartSlice";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { Button } from "../../../ui";
 import CartItem from "../CartItem/CartItem";
-import { FaArrowRight } from "react-icons/fa6";
+
+import { cartActions } from "../../../features/cart/cartSlice";
 
 import {
   getTotalCartQuantity,
@@ -13,6 +13,7 @@ import {
 } from "../../../features/cart/cartSlice";
 import { formatCurrency } from "../../../utils/helpers";
 
+import { FaArrowRight } from "react-icons/fa6";
 const CartModal = () => {
   const dispatch = useDispatch();
 

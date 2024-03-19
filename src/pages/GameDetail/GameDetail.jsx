@@ -1,16 +1,14 @@
-import { useParams } from "react-router-dom";
-import NavBar from "../../components/NavBar/NavBar";
-import { api } from "../../api/api";
 import { useEffect, useState } from "react";
-import Carousel from "../../components/Carousel/Carousel";
+import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 import styles from "./GameDetail.module.scss";
-import Loader from "../../ui/Loader/Loader";
+import { NavBar, Carousel, AddToCart, Header } from "../../components";
+import { api } from "../../api/api";
+import { Loader } from "../../ui";
 
-import AddToCart from "../../components/AddToCart/AddToCart";
-import Header from "../../components/Header/Header";
 import { gameActions } from "../../features/game/gameSlice";
-import { useDispatch } from "react-redux";
+
 const GameDetail = () => {
   const params = useParams();
 
