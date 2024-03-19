@@ -11,7 +11,6 @@ const CartItem = props => {
   const dispatch = useDispatch();
 
   const handleRemove = () => {
-    console.log(id);
     dispatch(cartActions.deleteItem(id));
   };
   return (

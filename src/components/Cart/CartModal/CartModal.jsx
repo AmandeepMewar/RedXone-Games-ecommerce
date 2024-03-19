@@ -54,7 +54,14 @@ const CartModal = () => {
               (totalQuantity === 1 && `1 game added`) ||
               (totalQuantity > 1 && `${totalQuantity} games added`)}
           </h2>
-          <Button onClick={handleClear}>Clear</Button>
+          {totalQuantity ? (
+            <Button
+              onClick={handleClear}
+              className={styles["cart-header__clear"]}
+            >
+              Clear
+            </Button>
+          ) : null}
         </div>
         <div className={styles["items"]}>
           {cartItems.map(item => (

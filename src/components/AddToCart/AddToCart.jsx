@@ -18,7 +18,6 @@ const AddToCart = props => {
 
   const handleAddToCart = () => {
     dispatch(cartActions.addItem({ id: id, name: name, price: price }));
-    console.log(cartItems);
   };
 
   const formattedPrice = formatCurrency(price);

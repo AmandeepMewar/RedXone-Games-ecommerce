@@ -26,7 +26,6 @@ const GameDetail = () => {
     setLoading(true);
     const response = await api(query);
     setGameData(response);
-    console.log(response);
     setTimeout(() => setLoading(false), 1000);
     dispatch(gameActions.setShowBackButton(true));
   };
