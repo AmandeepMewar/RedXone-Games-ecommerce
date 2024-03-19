@@ -1,0 +1,51 @@
+@use "../../styles/partials/mixins" as *;
+
+.error {
+  width: 100%;
+  height: 100vh;
+  @include flex(space-between, $alignIt: center, $flexDir: column);
+  gap: 1rem;
+  position: relative;
+
+  h1 {
+    font-size: 7.2rem;
+  }
+
+  &__content {
+    @include flex(center, center, column);
+    gap: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.logo {
+  width: 100%;
+  padding-top: 2rem;
+  @include flex(center, center);
+}
+
+.loader {
+  width: 30rem;
+  height: 1.5rem;
+  border-radius: 2rem;
+  color: var(--clr-grey-5);
+  border: 2px solid;
+  position: relative;
+}
+.loader::before {
+  content: "";
+  position: absolute;
+  margin: 2px;
+  inset: 0 100% 0 0;
+  border-radius: inherit;
+  background: currentColor;
+  animation: l6 3s infinite;
+}
+@keyframes l6 {
+  100% {
+    inset: 0;
+  }
+}

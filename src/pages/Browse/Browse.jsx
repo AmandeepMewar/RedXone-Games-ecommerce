@@ -40,7 +40,7 @@ const Browse = () => {
       dispatch(gameActions.setShowBackButton(false));
     }
 
-    const data = responseData.results.filter(item => item.rating);
+    const data = responseData.results.filter(item => item.ratings_count > 50);
     dispatch(gameActions.updateGames(data));
     dispatch(gameActions.setLoading(false));
   };
@@ -62,8 +62,11 @@ const Browse = () => {
           <div className={styles["game-list"]}>
             <Header title={PageHeader} />
             <Grid>
-              {gameData &&
-                gameData.map(game => <Card key={game.id} {...game} />)}
+              {gameData && gameData.length ? (
+                gameData.map(game => <Card key={game.id} {...game} />)
+              ) : (
+                <h2>No games found.</h2>
+              )}
             </Grid>
           </div>
         )}

@@ -5,10 +5,10 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 
-import { Home, Browse, GameDetail } from "./pages";
+import { Home, Browse, GameDetail, Error } from "./pages";
 
 const routerDefinitions = createRoutesFromElements(
-  <Route>
+  <Route errorElement={<Error />}>
     <Route path="/" element={<Home />} />
     <Route path="/browse" element={<Browse />} />
     <Route path="/browse/:id" element={<GameDetail />} />

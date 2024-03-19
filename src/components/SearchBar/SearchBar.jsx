@@ -18,6 +18,7 @@ const SearchBar = () => {
     else {
       navigate("/browse");
       setSearchParams({ search: input });
+      setInput("");
     }
   };
 

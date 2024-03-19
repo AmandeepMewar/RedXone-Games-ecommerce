@@ -5,7 +5,7 @@
 }
 
 .carousel-container {
-  width: 60vw;
+  max-width: 60vw;
   max-height: 50rem;
 
   @include responsive(lg) {
