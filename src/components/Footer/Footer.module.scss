@@ -1,3 +1,5 @@
+@use "../../styles/partials/mixins" as *;
+
 .footer {
   width: 100%;
   display: flex;
@@ -9,9 +11,20 @@
   padding: 8rem 0 5rem 0;
   user-select: none;
 
+  @include responsive(md) {
+    padding: 4rem 2rem;
+  }
+
   &__links {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 2rem;
+
+    @include responsive(md) {
+      gap: 1rem;
+    }
 
     &--item {
       transition: all 0.2s;
@@ -24,24 +37,36 @@
   }
 
   &__logo {
-    width: 3.8rem;
-    height: 3.8rem;
-    color: var(--clr-red);
-    transition: all 0.2s;
-    cursor: none;
-    &:hover {
-      transform: scale(1.3);
+    order: -1;
+    &--icon {
+      width: 3.8rem;
+      height: 3.8rem;
+      color: var(--clr-red);
+      transition: all 0.2s;
+      cursor: none;
+      &:hover {
+        transform: scale(1.3);
+      }
     }
   }
 
   &__copyright {
     border-top: 1px solid var(--clr-grey-2);
+    max-width: 50rem;
     width: 45%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
     padding-top: 3rem;
+
+    @include responsive(md) {
+      width: 90%;
+    }
+
+    p {
+      text-align: center;
+    }
 
     &--text {
       color: var(--clr-grey-5);
@@ -60,12 +85,15 @@
     justify-content: center;
     gap: 2rem;
 
+    @include responsive(md) {
+    }
+
     &--item {
+      width: 100%;
       height: 4rem;
       cursor: pointer;
-      transition: all 0.2s;
-      &:hover {
-        transform: skewX(-5deg) scale(1.05);
+
+      @include responsive(md) {
       }
     }
   }

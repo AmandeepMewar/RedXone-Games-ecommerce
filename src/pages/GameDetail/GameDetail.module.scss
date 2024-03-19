@@ -1,10 +1,12 @@
+@use "../../styles/partials/mixins" as *;
+
 .container {
   width: 100%;
 }
 
 .carousel-container {
-  width: 90rem;
-  height: 50rem;
+  max-width: 90rem;
+  max-height: 50rem;
 }
 
 .game-details {
@@ -29,6 +31,10 @@
     display: flex;
     gap: 3rem;
     padding: 3rem 0;
+
+    @include responsive(lg) {
+      flex-direction: column;
+    }
   }
 
   &__about {

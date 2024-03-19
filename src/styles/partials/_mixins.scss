@@ -1,0 +1,24 @@
+$lg: 1000px;
+$md: 800px;
+$sm: 600px;
+$xs: 500px;
+
+@mixin responsive($breakpoint) {
+  @if ($breakpoint==lg) {
+    @media (max-width: $lg) {
+      @content;
+    }
+  } @else if ($breakpoint==md) {
+    @media (max-width: $md) {
+      @content;
+    }
+  } @else if ($breakpoint==sm) {
+    @media (max-width: $sm) {
+      @content;
+    }
+  } @else if ($breakpoint==xs) {
+    @media (max-width: $xs) {
+      @content;
+    }
+  }
+}

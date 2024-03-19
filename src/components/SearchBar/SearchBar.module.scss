@@ -1,3 +1,5 @@
+@use "../../styles/partials/mixins" as *;
+
 .search-bar__form {
   display: flex;
   justify-content: center;
@@ -26,6 +28,22 @@
     background-color: var(--clr-grey-1);
     color: var(--clr-text);
     font-weight: 500;
+
+    @include responsive(lg) {
+      width: 30rem;
+    }
+
+    @include responsive(md) {
+      width: 25rem;
+    }
+
+    @include responsive(sm) {
+      width: 20rem;
+    }
+
+    @include responsive(xs) {
+      width: 17rem;
+    }
 
     &::placeholder {
       padding: 1px 0;

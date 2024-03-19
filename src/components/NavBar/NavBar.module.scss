@@ -1,15 +1,74 @@
+@use "../../styles/partials/mixins" as *;
+
 .navigation {
   width: 100%;
   display: flex;
   padding: 2rem;
   align-items: center;
+  justify-content: space-between;
   gap: 3rem;
 
+  @include responsive(md) {
+    gap: 0.2rem;
+    padding: 2rem 1rem;
+  }
+
+  @include responsive(md) {
+    gap: 0.6rem;
+    padding: 1.6rem 0.6rem;
+  }
+
+  @include responsive(xs) {
+    gap: 0rem;
+  }
+
   &__logo {
-    width: 3rem;
-    height: 3rem;
-    color: var(--clr-red);
-    transition: transform 0.2s;
+    display: flex;
+    align-items: center;
+    padding: 0rem 2rem;
+    gap: 1.2rem;
+    cursor: pointer;
+    transition: color 0.2s;
+
+    @include responsive(md) {
+      gap: 0.6rem;
+    }
+
+    &--icon {
+      width: 3rem;
+      height: 3rem;
+      color: var(--clr-red);
+      transition: transform 0.2s;
+
+      @include responsive(md) {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+
+    h2 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      line-height: 1.2;
+
+      @include responsive(md) {
+        font-size: 2.4rem;
+        letter-spacing: 0;
+      }
+
+      @include responsive(sm) {
+        font-size: 2rem;
+      }
+
+      @include responsive(xs) {
+        display: none;
+      }
+
+      span {
+        color: var(--clr-red);
+      }
+    }
   }
 
   &__links:link,
@@ -21,34 +80,23 @@
     cursor: pointer;
     transition: color 0.2s;
 
-    &:nth-last-child(2) {
-      margin-left: auto;
-    }
-
-    h2 {
-      font-size: 2.8rem;
-      font-weight: 800;
-      letter-spacing: 1px;
-      line-height: 1.2;
-
-      span {
-        color: var(--clr-red);
-      }
-    }
-
     h5 {
       font-size: 1.6rem;
       font-weight: 700;
       letter-spacing: 1px;
+
+      @include responsive(md) {
+        font-size: 1.4rem;
+      }
     }
 
     &:hover {
       color: var(--clr-grey-9);
     }
+  }
 
-    // &:hover .navigation__logo {
-    //   transform: scale(1.4);
-    // }
+  &__main {
+    display: flex;
   }
 
   &__cart-btn {
@@ -62,6 +110,14 @@
       font-size: 1.6rem;
       font-weight: 700;
       letter-spacing: 1px;
+
+      @include responsive(md) {
+        font-size: 1.2rem;
+      }
+
+      @include responsive(sm) {
+        display: none;
+      }
     }
 
     &:hover {

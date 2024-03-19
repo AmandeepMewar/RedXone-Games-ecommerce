@@ -17,9 +17,9 @@ const Footer = () => {
           </Link>
         ))}
       </div>
-      <div>
-        <SiRiotgames className={styles["footer__logo"]} />
-      </div>
+      <Link to="/" className={styles["footer__logo"]}>
+        <SiRiotgames className={styles["footer__logo--icon"]} />
+      </Link>
       <div className={styles["footer__copyright"]}>
         <p>
           © 2024 <span>RedXone Games.</span> All rights reserved.
@@ -41,12 +41,7 @@ const Footer = () => {
         />
         <img
           src={asBadge}
-          alt="PlayStore Badge"
-          className={styles["footer__badges--item"]}
-        />
-        <img
-          src={gsBadge}
-          alt="PlayStore Badge"
+          alt="AppStore Badge"
           className={styles["footer__badges--item"]}
         />
       </div>

@@ -1,12 +1,30 @@
+@use "../../styles/partials/mixins" as *;
+
 .header {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 2rem;
+  gap: 2rem;
+  padding: 0 0.4rem;
 
   h1 {
     font-size: 5rem;
     font-weight: 800;
+    text-align: right;
+
+    @include responsive(md) {
+      font-size: 3.2rem;
+    }
+
+    @include responsive(sm) {
+      font-size: 2.4rem;
+    }
+
+    @include responsive(xs) {
+      font-size: 2rem;
+    }
   }
 }
 
@@ -18,9 +36,18 @@
   gap: 0.6rem;
   transition: color 0.3s;
 
+  @include responsive(sm) {
+    font-size: 1.8rem;
+  }
+
   &__icon {
     width: 2.8rem;
     height: 2.8rem;
+
+    @include responsive(sm) {
+      width: 2rem;
+      height: 2rem;
+    }
   }
 
   &:hover {
